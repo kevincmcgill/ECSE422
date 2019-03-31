@@ -20,7 +20,7 @@ def main():
     # Create edge array
     for x in range(numOfNodes):
         for y in range(x + 1, numOfNodes, 1):
-            edge[z] = Edge(x, y, reliability[z], cost[z])
+            edge[z] = Edge(x+1, y+1, reliability[z], cost[z])
             z = z + 1
 
     edge.sort(key=decreasingReli, reverse=True)
