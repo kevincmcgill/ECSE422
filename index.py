@@ -30,17 +30,42 @@ def getCost(list):
         cost = cost + list[i].cost
     return cost
 
-def buildSpanningTree(list):
+# def buildSpanningTree(list):
+#     i = 0
+#     spanningTree = DL.DoubleList()
+#     for i in range(len(list)):
+#         if i == 0: #initial edge and nodes
+#             spanningTree.append(list[i].nodeA)
+#             spanningTree.append(list[i].nodeB)
+#             spanningTree.show()
+#         else:
+#             # add logic
+#             return
+
+def buildSpanningTree(edge):
+    connectedNode = []
+    pickedEdge = []
     i = 0
-    spanningTree = DL.DoubleList()
-    for i in range(len(list)):
-        if i == 0: #initial edge and nodes
-            spanningTree.append(list[i].nodeA)
-            spanningTree.append(list[i].nodeB)
-            spanningTree.show()
+    while len(connectedNode) < numOfNodes:
+        if i == 0:
+            pickedEdge.append(edge[i])
+            connectedNode.append(edge[i].nodeA)
+            connectedNode.append(edge[i].nodeB)
+
+
+        elif edge[i].nodeA in connectedNode and edge[i].nodeB in connectedNode:
+            i += 1
+            continue
+
         else:
-            # add logic
-            return
+            pickedEdge.append(edge[i])
+            if edge[i].nodeA not in connectedNode:
+                connectedNode.append(edge[i].nodeA)
+            if edge[i].nodeB not in connectedNode:
+                connectedNode.append(edge[i].nodeB)
+        i += 1
+    return pickedEdge
+
 
 
 def main():
@@ -59,7 +84,13 @@ def main():
 
     print("Total cost:", getCost(edge))
 
-    buildSpanningTree(edge)
+    
+
+    spanningTreeEdge = buildSpanningTree(edge)
+
+    for x in range(len(spanningTreeEdge)):
+        print("Edge #", x+1, ":", spanningTreeEdge[x].nodeA,"-", spanningTreeEdge[x].nodeB, "Reliability:",spanningTreeEdge[x].reliability, "Cost:", spanningTreeEdge[x].cost)
+    print("Total cost:", getCost(spanningTreeEdge))
 
 
 if __name__ == "__main__":
