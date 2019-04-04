@@ -1,4 +1,4 @@
-import doubleList as DL
+# import doubleList as DL
 import itertools
 
 # create by Mei Tang (260742835) and Kevin Chen (260658680) for ECSE 422 project
@@ -22,11 +22,11 @@ class Edge:
 		self.cost = cost
 
 
-class Node:
-    def __init__(self, data, prev, next):
-        self.data = data
-        self.prev = prev
-        self.next = next
+# class Node:
+#     def __init__(self, data, prev, next):
+#         self.data = data
+#         self.prev = prev
+#         self.next = next
 
 
 
@@ -174,7 +174,6 @@ def meetReliabilityGoal(edge):
 
         if getReli(graph) >= reliabilityGoal:
             graphSet.append(graph)
-            print(i)
             # if len(graphSet) == 210:
             #       return graphSet
     return graphSet
