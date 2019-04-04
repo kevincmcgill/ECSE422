@@ -4,6 +4,10 @@ numOfNodes = 6
 reliability = [0.94, 0.91, 0.96, 0.93, 0.92, 0.94, 0.97, 0.91, 0.92, 0.94, 0.90, 0.94, 0.93, 0.96, 0.91]
 cost = [10, 25, 10, 20, 30, 10, 10, 25, 20, 20, 40, 10, 20, 10, 30]
 edgeNum = len(reliability)
+reliabilityGoal = 0.9
+
+# if costGoal is negative, the cost constrain = infinity (no cost constain)
+costGoal = 100
 
 class Edge:
 	def __init__(self,nodeA,nodeB,reliability,cost):
@@ -44,16 +48,8 @@ def getCost(list):
 #             return
 
 def getReli(edge):
-    # print("")
-
-    # for x in range(len(edge)):
-    #     print("Edge #", x+1, ":", edge[x].nodeA,"-", edge[x].nodeB, "Reliability:",edge[x].reliability, "Cost:", edge[x].cost)
-
-    # create an array with edgeNumber
-    edgeNumber = range(len(edge))
     # to connect N nodes, we need at least N-1 edges
     # find all combination with N-1 edges (all kind of possible minimal spanning tree)
-    # combination = list(combinations(edgeNumber,numOfNodes -1 ))
     combination = list(itertools.product([0, 1], repeat = len(edge)))
 
     i = 0
@@ -66,14 +62,7 @@ def getReli(edge):
             i += 1
     
     outputReliability = 0
-    # print(len(combination))
-
     for i in range(len(combination)):
-   
-        # declare an empty array to store connected nodes
-        connectedNode = []
-        offReliability = 1
-        
         subGraph = []
         for j in range(len(edge)):
             if combination[i][j] == 1: 
@@ -93,7 +82,6 @@ def getReli(edge):
             else:
                  subGraphReliability *= (1 - edge[j].reliability)
 
-        print("reli", subGraphReliability)
         outputReliability += subGraphReliability
 
 
@@ -145,6 +133,67 @@ def buildSpanningTree(edge):
     return pickedEdge
 
 
+def meetReliabilityGoal(edge):
+    
+    # to connect N nodes, we need at least N-1 edges
+    # find all combination with N-1 edges (all kind of possible minimal spanning tree)
+    combination = list(itertools.product([0, 1], repeat = len(edge)))
+
+    graphSet = []
+    i = 0
+    while True:
+        if i == (len(combination) - 1):
+            break 
+        elif sum(combination[i]) < numOfNodes-1:
+            del combination[i]
+        else:
+            i += 1
+
+    for i in range(len(combination)):
+   
+        # declare an empty array to store connected nodes
+        connectedNode = []
+        offReliability = 1
+        
+        graph = []
+        for j in range(len(edge)):
+            if combination[i][j] == 1: 
+                graph.append(edge[j])
+                 
+        if not isAllConnected(graph):
+            continue
+
+        if costGoal > 0:
+            if getCost(graph) > costGoal:
+                continue
+
+        if getReli(graph) >= reliabilityGoal:
+            graphSet.append(graph)
+            print(i)
+            # if len(graphSet) == 210:
+            #       return graphSet
+    return graphSet
+
+def findMaxReliability(graphSet):
+    outputGraph = []
+    MaxReli = 0
+    for x in range(len(graphSet)):
+        if getReli(graphSet[x]) > MaxReli:
+            outputGraph = graphSet[x]
+            MaxReli = getReli(graphSet[x])
+
+    print("")
+
+    for x in range(len(outputGraph)):
+        print("Edge #", x+1, ":", outputGraph[x].nodeA,"-", outputGraph[x].nodeB, "Reliability:",outputGraph[x].reliability, "Cost:", outputGraph[x].cost)
+    print("Total cost:", getCost(outputGraph))
+    print("Best Reliability", getReli(outputGraph)) 
+
+
+# !!!!!!!!!! IMPORTANT !!!!!!!!!!!!
+# DO NOT put a large value as the cost constain. 
+# This will make the system run so slow
+
 
 def main():
     edge = [None] * edgeNum
@@ -157,24 +206,31 @@ def main():
 
     edge.sort(key=decreasingReli, reverse=True)
 
-    for x in range(edgeNum):
-        print("Edge #", x+1, ":", edge[x].nodeA,"-", edge[x].nodeB, "Reliability:",edge[x].reliability, "Cost:", edge[x].cost)
+    # for x in range(edgeNum):
+    #     print("Edge #", x+1, ":", edge[x].nodeA,"-", edge[x].nodeB, "Reliability:",edge[x].reliability, "Cost:", edge[x].cost)
 
-    print("Total cost:", getCost(edge))
+    # print("Total cost:", getCost(edge))
 
     #build minimal spanning tree
-    spanningTreeEdge = buildSpanningTree(edge)
+    # spanningTreeEdge = buildSpanningTree(edge)
     # for x in range(len(spanningTreeEdge)):
     #     print("Edge #", x+1, ":", spanningTreeEdge[x].nodeA,"-", spanningTreeEdge[x].nodeB, "Reliability:",spanningTreeEdge[x].reliability, "Cost:", spanningTreeEdge[x].cost)
     # print("Total cost:", getCost(spanningTreeEdge))
+    
 
-    testSet = [edge[0],edge[1],edge[2],edge[4],edge[5],edge[7],edge[11]]
-    for x in range(len(testSet)):
-        print("Edge #", x+1, ":     ", testSet[x].nodeA,"-", testSet[x].nodeB, "        Reliability:",testSet[x].reliability, "Cost:", testSet[x].cost)
 
-    # print(getReli(spanningTreeEdge))
-    print(getReli(edge))
-    # print(getReli(edge))
+    # all graph that meet the constrain
+    sol = meetReliabilityGoal(edge)
+
+    # print out the entire set
+    for x in range(len(sol)):
+        print("Reliability:",getReli(sol[x]))
+        for i in range(len(sol[x])):
+            print("Edge #", x+1, ":", sol[x][i].nodeA,"-", sol[x][i].nodeB, "Reliability:",sol[x][i].reliability, "Cost:", sol[x][i].cost)
+        print("")
+    # find the max reliability in given constrain
+    findMaxReliability(sol)
+    
 
 
 if __name__ == "__main__":
