@@ -1,14 +1,22 @@
 import doubleList as DL
 import itertools
+
+# create by Mei Tang (260742835) and Kevin Chen (260658680) for ECSE 422 project
+# 
+
+
+
+
+
 numOfNodes = 6
 reliability = [0.94, 0.91, 0.96, 0.93, 0.92, 0.94, 0.97, 0.91, 0.92, 0.94, 0.90, 0.94, 0.93, 0.96, 0.91]
 cost = [10, 25, 10, 20, 30, 10, 10, 25, 20, 20, 40, 10, 20, 10, 30]
-edgeNum = len(reliability)
-reliabilityGoal = 0.9
-
 # if costGoal is negative, the cost constrain = infinity (no cost constain)
 costGoal = 100
+reliabilityGoal = 0.9
 
+
+edgeNum = len(reliability)
 class Edge:
 	def __init__(self,nodeA,nodeB,reliability,cost):
 		self.nodeA = nodeA
