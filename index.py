@@ -1,6 +1,6 @@
 import itertools
 
-# create by Mei Tang (260742835) and Kevin Chen (260658680) for ECSE 422 project
+# created by Mei Tang (260742835) and Kevin Chen (260658680) for ECSE 422 project
 
 # numOfNodes = 6
 # reliability = [0.94, 0.91, 0.96, 0.93, 0.92, 0.94, 0.97, 0.91, 0.92, 0.94, 0.90, 0.94, 0.93, 0.96, 0.91]
@@ -17,7 +17,16 @@ class Edge:
 		self.cost = cost
 
 
-def readInputFile(outputFileA, outputFileB, outputFileC):
+def runPart(file, numOfNodes, reliability,cost, edgeNum):
+    outputFile = open(file, "w")
+    outputFile.write("Number of Nodes: " + str(numOfNodes) + "\n")
+    outputFile.write("Reliability Matrix: " + str(reliability) + "\n")
+    outputFile.write("Cost Matrix: " + str(cost) + "\n")
+    outputFile.write("Number of edges: " + str(edgeNum) + "\n")
+    outputFile.close()
+
+
+def readInputFile(answer_list):
     lines = [line for line in open('input.txt') if not line.startswith('#') and
              len(line.strip())]
     numOfNodes = int(lines[0].split("\n")[0])
@@ -30,13 +39,18 @@ def readInputFile(outputFileA, outputFileB, outputFileC):
     print("Cost Matrix:" , cost)
     print("Number of edges:", edgeNum)
 
-    for file in [outputFileA, outputFileB, outputFileC]:
-        outputFile = open(file, "w")
-        outputFile.write("Number of Nodes: " + str(numOfNodes) + "\n")
-        outputFile.write("Reliability Matrix: " + str(reliability) + "\n")
-        outputFile.write("Cost Matrix: " + str(cost) + "\n")
-        outputFile.write("Number of edges: " + str(edgeNum) + "\n")
-        outputFile.close()
+    if answer_list[0]:
+        runPart("resultPartA.txt",numOfNodes, reliability,cost, edgeNum)
+        print("running A")
+
+    if answer_list[1]:
+        runPart("resultPartB.txt",numOfNodes, reliability,cost, edgeNum)
+        print("running B")
+
+    if answer_list[2]:
+        runPart("resultPartC.txt",numOfNodes, reliability,cost, edgeNum)
+        print("running C")
+
     return [numOfNodes, reliability, cost, edgeNum]
 
 
@@ -210,11 +224,23 @@ def printSolutions(file,sol, numOfNodes):
 def main():
     reliabilityGoal = float(input("Please enter reliability goal (from 0 to 1): "))
     costGoal = int(input("Please enter cost constraint (from 1 to 100): "))
+
+    runPartA = input("Would you like to run part A? (y/n)")
+    runPartB = input("Would you like to run part B? (y/n)")
+    runPartC = input("Would you like to run part C? (y/n)")
+
+    answer_list = []
+    for answer in [runPartA, runPartB, runPartC]:
+        if answer == "y" or answer == "Y" or answer == "yes" or answer == "Yes" or answer == "YES":
+            answer = True
+        else:
+            answer = False
+        answer_list.append(answer)
+
     print(50 * "*")
     print("Reliability goal set to: " + str(reliabilityGoal))
     print("Cost constraint set to: " + str(costGoal))
-
-    inputValues = readInputFile("resultPartA.txt", "resultPartB.txt", "resultPartC.txt")
+    inputValues = readInputFile(answer_list)
     numOfNodes = inputValues[0]
     reliability = inputValues[1]
     cost = inputValues[2]
@@ -230,28 +256,39 @@ def main():
 
     edge.sort(key=decreasingReli, reverse=True)
 
-    outputFileA = open("resultPartA.txt", "a")
-    outputFileA.write(50* "*" + "\n")
-    outputFileA.write("PART a) Solutions meeting reliability goal: " + str(reliabilityGoal) + "\n")
-    solA = meetReliabilityGoal(edge, numOfNodes, reliabilityGoal, costGoal, False)
-    printSolutions(outputFileA, solA, numOfNodes)
-    outputFileA.write(50 * "*" + "\n")
-    outputFileA.close()
+    # Execute Part A
+    if answer_list[0]:
+        outputFileA = open("resultPartA.txt", "a")
+        outputFileA.write(50 * "*" + "\n")
+        outputFileA.write("PART a) Solutions meeting reliability goal: " + str(reliabilityGoal) + "\n")
+        solA = meetReliabilityGoal(edge, numOfNodes, reliabilityGoal, costGoal, False)
+        printSolutions(outputFileA, solA, numOfNodes)
+        outputFileA.write(50 * "*" + "\n")
+        outputFileA.close()
 
-    outputFileB = open("resultPartB.txt", "a")
-    outputFileB.write(50 * "*" + "\n")
-    outputFileB.write("PART b) Solutions meeting reliability goal: " + str(reliabilityGoal) + " given cost constraint: " + str(costGoal) + "\n")
-    solB = meetReliabilityGoal(edge, numOfNodes, reliabilityGoal, costGoal, True)
-    printSolutions(outputFileB, solB, numOfNodes)
-    outputFileB.write(50 * "*" + "\n")
-    outputFileB.close()
+    # Execute Part B
+    solB = None
+    if answer_list[1]:
+        outputFileB = open("resultPartB.txt", "a")
+        outputFileB.write(50 * "*" + "\n")
+        outputFileB.write(
+            "PART b) Solutions meeting reliability goal: " + str(reliabilityGoal) + " given cost constraint: " + str(
+                costGoal) + "\n")
+        solB = meetReliabilityGoal(edge, numOfNodes, reliabilityGoal, costGoal, True)
+        printSolutions(outputFileB, solB, numOfNodes)
+        outputFileB.write(50 * "*" + "\n")
+        outputFileB.close()
 
-    outputFileC = open("resultPartC.txt", "a")
-    outputFileC.write(50 * "*" + "\n")
-    outputFileC.write("PART c) Solution for maximum reliability given cost constraint: " + str(costGoal) + "\n")
-    findMaxReliability(outputFileC, solB, numOfNodes)
-    outputFileC.write(50 * "*" + "\n")
-    outputFileC.close()
+    # Execute Part C
+    if answer_list[2]:
+        if solB is None:
+            solB = meetReliabilityGoal(edge, numOfNodes, reliabilityGoal, costGoal, True)
+        outputFileC = open("resultPartC.txt", "a")
+        outputFileC.write(50 * "*" + "\n")
+        outputFileC.write("PART c) Solution for maximum reliability given cost constraint: " + str(costGoal) + "\n")
+        findMaxReliability(outputFileC, solB, numOfNodes)
+        outputFileC.write(50 * "*" + "\n")
+        outputFileC.close()
 
 
 if __name__ == "__main__":
