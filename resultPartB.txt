@@ -1,0 +1,261 @@
+Number of Nodes: 6
+Reliability Matrix: [0.94, 0.91, 0.96, 0.93, 0.92, 0.94, 0.97, 0.91, 0.92, 0.94, 0.9, 0.94, 0.93, 0.96, 0.91]
+Cost Matrix: [10.0, 25.0, 10.0, 20.0, 30.0, 10.0, 10.0, 25.0, 20.0, 20.0, 40.0, 10.0, 20.0, 10.0, 30.0]
+Number of edges: 15
+**************************************************
+PART b) Solutions meeting reliability goal: 0.95 given cost constraint: 100
+Solution # 1
+Total reliability:0.9542466475199999
+Edge # 1: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 2: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 3: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 4: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 5: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 6: 4 - 5 Reliability: 0.93 Cost: 20.0
+
+Solution # 2
+Total reliability:0.97498430522496
+Edge # 1: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 2: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 3: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 4: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 5: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 6: 4 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 2 - 6 Reliability: 0.92 Cost: 20.0
+
+Solution # 3
+Total reliability:0.9732722831347199
+Edge # 1: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 2: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 3: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 4: 3 - 4 Reliability: 0.94 Cost: 20.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 4 - 5 Reliability: 0.93 Cost: 20.0
+
+Solution # 4
+Total reliability:0.95460420096
+Edge # 1: 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 2: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 3: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 4: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 5: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 6: 2 - 5 Reliability: 0.91 Cost: 25.0
+
+Solution # 5
+Total reliability:0.97597935643776
+Edge # 1: 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 2: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 3: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 4: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 4 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 5 - 6 Reliability: 0.91 Cost: 30.0
+
+Solution # 6
+Total reliability:0.9812580585792
+Edge # 1: 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 2: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 3: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 4: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 4 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 2 - 5 Reliability: 0.91 Cost: 25.0
+
+Solution # 7
+Total reliability:0.9800234084352001
+Edge # 1: 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 2: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 3: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 4: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 5 - 6 Reliability: 0.91 Cost: 30.0
+
+Solution # 8
+Total reliability:0.97841047166976
+Edge # 1: 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 2: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 3: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 4: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 2 - 5 Reliability: 0.91 Cost: 25.0
+
+Solution # 9
+Total reliability:0.9774838402444799
+Edge # 1: 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 2: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 3: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 4: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 4 - 5 Reliability: 0.93 Cost: 20.0
+
+Solution # 10
+Total reliability:0.95212059312
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 3: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 4: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 5: 4 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 6: 1 - 6 Reliability: 0.92 Cost: 30.0
+
+Solution # 11
+Total reliability:0.9522427310800001
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 3: 3 - 4 Reliability: 0.94 Cost: 20.0
+Edge # 4: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 5: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 6: 5 - 6 Reliability: 0.91 Cost: 30.0
+
+Solution # 12
+Total reliability:0.9696620203670401
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 3: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 4: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 5: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 6: 4 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 2 - 6 Reliability: 0.92 Cost: 20.0
+
+Solution # 13
+Total reliability:0.95016753468
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 3: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 4: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 5: 1 - 3 Reliability: 0.91 Cost: 25.0
+Edge # 6: 2 - 5 Reliability: 0.91 Cost: 25.0
+
+Solution # 14
+Total reliability:0.9549617543999999
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 3: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 4: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 5: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 6: 3 - 5 Reliability: 0.9 Cost: 40.0
+
+Solution # 15
+Total reliability:0.9740930730115199
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 3: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 4: 3 - 4 Reliability: 0.94 Cost: 20.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 4 - 5 Reliability: 0.93 Cost: 20.0
+
+Solution # 16
+Total reliability:0.9786892210143999
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 3: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 4: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 5 - 6 Reliability: 0.91 Cost: 30.0
+
+Solution # 17
+Total reliability:0.9726231430182399
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 3: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 4: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 2 - 5 Reliability: 0.91 Cost: 25.0
+
+Solution # 18
+Total reliability:0.9785281455772799
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 3: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 4: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 4 - 5 Reliability: 0.93 Cost: 20.0
+
+Solution # 19
+Total reliability:0.9570700879199998
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 3: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 4: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 5: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 6: 5 - 6 Reliability: 0.91 Cost: 30.0
+
+Solution # 20
+Total reliability:0.9705149554163199
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 3: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 4: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 4 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 5 - 6 Reliability: 0.91 Cost: 30.0
+
+Solution # 21
+Total reliability:0.97141230423232
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 3: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 4: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 5 - 6 Reliability: 0.91 Cost: 30.0
+
+Solution # 22
+Total reliability:0.95240613621312
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 3: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 4: 3 - 4 Reliability: 0.94 Cost: 20.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 4 - 5 Reliability: 0.93 Cost: 20.0
+
+Solution # 23
+Total reliability:0.97995177330624
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 3: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 4: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 5 - 6 Reliability: 0.91 Cost: 30.0
+
+Solution # 24
+Total reliability:0.9790353319622399
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 3: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 4: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 2 - 5 Reliability: 0.91 Cost: 25.0
+
+Solution # 25
+Total reliability:0.9775965910636799
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 3: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 4: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 5: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 6: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 7: 4 - 5 Reliability: 0.93 Cost: 20.0
+
+Solution # 26
+Total reliability:0.9864407847359615
+Edge # 1: 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2: 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 3: 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 4: 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 5: 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 6: 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 7: 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 8: 4 - 5 Reliability: 0.93 Cost: 20.0
+
+**************************************************

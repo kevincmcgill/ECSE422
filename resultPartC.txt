@@ -1,0 +1,18 @@
+Number of Nodes: 6
+Reliability Matrix: [0.94, 0.91, 0.96, 0.93, 0.92, 0.94, 0.97, 0.91, 0.92, 0.94, 0.9, 0.94, 0.93, 0.96, 0.91]
+Cost Matrix: [10.0, 25.0, 10.0, 20.0, 30.0, 10.0, 10.0, 25.0, 20.0, 20.0, 40.0, 10.0, 20.0, 10.0, 30.0]
+Number of edges: 15
+**************************************************
+PART c) Solution for maximum reliability given cost constraint: 100
+
+Edge # 1 : 2 - 4 Reliability: 0.97 Cost: 10.0
+Edge # 2 : 1 - 4 Reliability: 0.96 Cost: 10.0
+Edge # 3 : 4 - 6 Reliability: 0.96 Cost: 10.0
+Edge # 4 : 1 - 2 Reliability: 0.94 Cost: 10.0
+Edge # 5 : 2 - 3 Reliability: 0.94 Cost: 10.0
+Edge # 6 : 3 - 6 Reliability: 0.94 Cost: 10.0
+Edge # 7 : 1 - 5 Reliability: 0.93 Cost: 20.0
+Edge # 8 : 4 - 5 Reliability: 0.93 Cost: 20.0
+Total cost: 100.0
+Max Reliability 0.9864407847359615
+**************************************************
