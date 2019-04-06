@@ -225,15 +225,23 @@ def main():
 
     # all graph that meet the constrain
     sol = meetReliabilityGoal(edge)
-
+    print(50* "*")
+    print("PART a) Solutions meeting reliability goal: ", reliabilityGoal, "\n")
     # print out the entire set
     for x in range(len(sol)):
-        print("Reliability:",getReli(sol[x]))
+        print("Solution #",x+1)
+        print("Total reliability:",getReli(sol[x]))
         for i in range(len(sol[x])):
-            print("Edge #", x+1, ":", sol[x][i].nodeA,"-", sol[x][i].nodeB, "Reliability:",sol[x][i].reliability, "Cost:", sol[x][i].cost)
+            print("Edge #", i+1, ":", sol[x][i].nodeA,"-", sol[x][i].nodeB, "Reliability:",sol[x][i].reliability, "Cost:", sol[x][i].cost)
         print("")
+
+    print(50 * "*")
+    print("PART b) Solutions meeting reliability goal: ", reliabilityGoal, "given cost constraint:", costGoal, "\n")
+    print(50 * "*")
+    print("PART c) Solution with maximum reliability given cost constraint:", costGoal)
     # find the max reliability in given constrain
     findMaxReliability(sol)
+    print(50 * "*")
     
 
 
